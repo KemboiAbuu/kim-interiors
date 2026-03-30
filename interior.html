@@ -1,112 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIM INTERIORS AND CONSTRUCTION COMPANY | Interior Designs</title>
-
+<title>KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY | Interior Designs</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.jpg">
 <style>
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #ffffff;
+    color: #000000;
 }
 
-/* NAVIGATION */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     gap: 25px;
-    background: #2c3e50;
+    background: #7dd3fc;
     padding: 15px 30px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.navbar a.active {
-    border-bottom: 2px solid #e67e22;
+/* Dropdown */
+.dropdown {
+    position: relative;
 }
 
-/* HERO */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #7dd3fc;
+    min-width: 200px;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: #ffffff;
+}
+
+.dropdown-content a:hover {
+    background: #ffffff;
+    color: #7dd3fc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ================= HERO ================= */
 .hero {
     background: url("images/interior-hero.jpg") center/cover no-repeat;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 90px 20px;
 }
 
+/* ✅ ALGERIAN FONT APPLIED HERE */
 .hero h1 {
-    font-family: 'Algeria', serif;
-    font-size: 48px;
+    font-family: "Algerian", "Times New Roman", serif;
+    font-size: 44px;
     margin: 10px 0;
     text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 6px rgba(125,211,252,0.7);
 }
 
 .hero p {
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 28px;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 26px;
     margin-top: 10px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 6px rgba(125,211,252,0.7);
 }
 
-/* SERVICES CONTAINER */
+/* ================= SERVICES ================= */
 .services-container {
+    max-width: 1200px;
+    margin: 50px auto;
     display: flex;
-    justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
-    margin: 50px;
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .service-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(125,211,252,0.25);
     padding: 20px;
-    transition: transform 0.3s;
+    display: flex;
+    gap: 15px;
+    flex: 1 1 calc(33% - 20px);
+    min-width: 280px;
 }
-
-.service-card:hover { transform: translateY(-5px); }
 
 .service-card img {
-    width: 100%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.service-card h3 { margin: 15px 0 10px; }
-
-.service-card button {
-    background: #3498db;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
+/* ===== TEXT BLACK ===== */
+.service-card-content h3 {
+    margin: 0;
+    color: #000000;
+    font-size: 20px;
 }
 
-.service-card button:hover { background: #2980b9; }
+.service-card-content ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 1.6;
+    color: #000000;
+}
 
-/* FOOTER */
+.service-card-content ul li {
+    margin-bottom: 8px;
+}
+
+/* ================= FOOTER ================= */
 footer {
-    background: #2c3e50;
-    color: white;
+    background: #7dd3fc;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
     margin-top: 50px;
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
-    .services-container { flex-direction: column; align-items: center; }
-    .service-card { width: 90%; }
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+    .service-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-card-content ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
 }
 </style>
 </head>
@@ -116,41 +187,88 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="services.html" class="active">Services</a>
+
+    <div class="dropdown">
+        <a href="construction.html">Services ▼</a>
+        <div class="dropdown-content">
+            <a href="construction.html">Constructions</a>
+        </div>
+    </div>
+
     <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Interior Designs</h1>
+    <h1>INTERIOR DESIGNS</h1>
     <p>Creating Spaces That Inspire</p>
 </section>
 
-<!-- INTERIOR DESIGN SERVICES -->
+<!-- SERVICES -->
 <div class="services-container">
+
     <div class="service-card">
-        <img src="images/livingroom.jpg" alt="Living Room Design">
-        <h3>Living Room Design</h3>
-        <p>Cozy, stylish, and modern living room designs tailored to your taste.</p>
+        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
+        <div class="service-card-content">
+            <h3>1. Walls & Ceiling Works</h3>
+            <ul>
+                <li>Wall skimming for smooth finishes</li>
+                <li>Gypsum, POP & modern ceilings</li>
+            </ul>
+        </div>
     </div>
 
     <div class="service-card">
-        <img src="images/bedroom.jpg" alt="Bedroom Design">
-        <h3>Bedroom Design</h3>
-        <p>Comfortable and relaxing bedroom layouts with perfect lighting and decor.</p>
+        <img src="images/floor-design.jpg" alt="Floor Designs">
+        <div class="service-card-content">
+            <h3>2. Floor Designs</h3>
+            <ul>
+                <li>Tiles floors</li>
+                <li>Wood-tiled floors</li>
+            </ul>
+        </div>
     </div>
 
     <div class="service-card">
-        <img src="images/kitchen.jpg" alt="Kitchen Design">
-        <h3>Kitchen Design</h3>
-        <p>Functional and modern kitchens with smart storage and elegant finishes.</p>
+        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
+        <div class="service-card-content">
+            <h3>3. Cabinets & Lightings</h3>
+            <ul>
+                <li>Wardrobes</li>
+                <li>Kitchen cabinets</li>
+                <li>Decorative lighting</li>
+            </ul>
+        </div>
     </div>
+
+    <div class="service-card">
+        <img src="images/fittings.jpg" alt="Fitting Works">
+        <div class="service-card-content">
+            <h3>4. Fitting Work Designs</h3>
+            <ul>
+                <li>Ceramic fittings</li>
+                <li>Sanitary & aluminium works</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
+        <div class="service-card-content">
+            <h3>5. Cleaning & Hand Over</h3>
+            <ul>
+                <li>Post-construction cleaning</li>
+                <li>Final inspection & handover</li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
-<!-- FOOTER -->
 <footer>
-    &copy; 2026 KIM INTERIORS AND CONSTRUCTION COMPANY. All Rights Reserved.
+    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY
 </footer>
 
 </body>
 </html>
+
